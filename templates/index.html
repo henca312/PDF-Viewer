@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+</head>
+<body>
+    <h1>PDF Viewer</h1>
+    <ul>
+        {% for pdf in pdf_files %}
+        <li>
+            <a href="{{ url_for('pdf_view', filename=pdf) }}" target="pdf_frame">{{ pdf }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <iframe name="pdf_frame" width="100%" height="800px"></iframe>
+</body>
+</html>
